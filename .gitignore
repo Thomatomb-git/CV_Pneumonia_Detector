@@ -1,0 +1,11 @@
+# Ignore all files in dataset directory
+dataset/**
+# Except directories
+!dataset/**/
+# Except .gitkeep files so the directory structure is maintained
+!dataset/**/.gitkeep
+
+# Ignore Keras model files
+*.h5
+*.keras
+*.hdf5
