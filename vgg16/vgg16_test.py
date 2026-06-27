@@ -9,7 +9,7 @@ import seaborn as sns
 # 1. SETUP PATH DAN PARAMETER
 # ==========================================
 # Arahkan ke folder test
-BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'dataset/data_aug'))
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'dataset/data_stratified'))
 TEST_DIR = os.path.join(BASE_DIR, 'test')
 
 IMG_SIZE = (224, 224)
@@ -80,12 +80,12 @@ plt.figure(figsize=(7, 5))
 sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', 
             xticklabels=classes, yticklabels=classes,
             annot_kws={"size": 14}) # Memperbesar font angka
-plt.title('Confusion Matrix - Uji Coba VGG16 - B', fontsize=16)
+plt.title('Confusion Matrix - Uji Coba VGG16', fontsize=16)
 plt.ylabel('Label Asli (True Label)', fontsize=12)
 plt.xlabel('Prediksi Model (Predicted Label)', fontsize=12)
 plt.tight_layout()
 
 # Menyimpan gambar dengan nama spesifik untuk VGG16
-save_path = 'confusion_matrix_vgg16_B.png'
+save_path = 'confusion_matrix_vgg16.png'
 plt.savefig(save_path, dpi=300)
 print(f"Selesai! Gambar Confusion Matrix disimpan di: {os.path.abspath(save_path)}")
